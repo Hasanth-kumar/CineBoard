@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent-teal: #00FFC6;
+  --color-accent-purple: #A020F0;
+}
+
+@layer base {
+  body {
+    @apply text-white antialiased;
+    background: linear-gradient(to bottom, #0b0b0f, #13131a);
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  
+  .glass-hover {
+    @apply hover:bg-white/10 transition-all duration-300;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent-teal to-accent-purple bg-clip-text text-transparent;
+  }
+  
+  .bg-cinematic {
+    background: linear-gradient(to bottom, #0b0b0f, #13131a);
+  }
+}

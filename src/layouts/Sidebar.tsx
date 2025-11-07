@@ -1,39 +1,23 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  LayoutDashboard, 
-  Film, 
-  Sparkles, 
-  Clapperboard, 
-  FolderOpen, 
-  Settings,
-  ChevronLeft,
-  ChevronRight
-} from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-
-const sidebarItems = [
-  { icon: LayoutDashboard, label: 'Dashboard', href: '/' },
-  { icon: Film, label: 'Projects', href: '/projects' },
-  { icon: Sparkles, label: 'Teaser Evaluator', href: '/teaser-evaluator' },
-  { icon: Clapperboard, label: 'Script2Scene', href: '/script2scene' },
-  { icon: FolderOpen, label: 'Assets', href: '/assets' },
-  { icon: Settings, label: 'Settings', href: '/settings' },
-];
+import { getSidebarItems } from './utils/sidebarData';
 
 export default function Sidebar() {
   const [isExpanded, setIsExpanded] = useState(true);
   const pathname = usePathname();
+  const sidebarItems = getSidebarItems();
 
   return (
     <motion.aside
       initial={{ width: 240 }}
       animate={{ width: isExpanded ? 240 : 80 }}
       transition={{ duration: 0.3, ease: 'easeInOut' }}
-      className="glass border-r border-white/10 flex flex-col h-full relative"
+      className="glass border-r border-white/10 flex flex-col relative mb-4"
     >
       <div className="flex-1 py-6 px-3 space-y-2">
         {sidebarItems.map((item) => {
@@ -114,3 +98,5 @@ export default function Sidebar() {
     </motion.aside>
   );
 }
+
+

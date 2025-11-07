@@ -21,7 +21,7 @@ CineBoard AI is a cinematic single-page application (SPA) built with Next.js 14+
 ## Project Structure
 ```
 .
-├── app/                     # Next.js App Router
+├── app/                     # Next.js App Router (routes only)
 │   ├── assets/             # Assets management page
 │   ├── projects/           # Projects page
 │   ├── profile/            # User profile page
@@ -32,15 +32,29 @@ CineBoard AI is a cinematic single-page application (SPA) built with Next.js 14+
 │   ├── layout.tsx          # Root layout with AppShell
 │   ├── template.tsx        # Page transition wrapper
 │   └── page.tsx            # Dashboard (home page)
-├── components/
-│   └── layout/             # Layout components
-│       ├── AppShell.tsx         # Main app shell wrapper
-│       ├── GlassCard.tsx        # Glassmorphic card component
-│       ├── Navigation.tsx       # Original navigation (legacy)
-│       ├── PageTransition.tsx   # Page transition animations
-│       ├── Sidebar.tsx          # Collapsible sidebar navigation
-│       ├── TopNavigation.tsx    # Top navigation bar
-│       └── index.ts            # Component exports
+├── src/
+│   ├── features/           # Feature-specific code
+│   │   ├── dashboard/     # Dashboard feature
+│   │   │   ├── components/ # Dashboard UI components
+│   │   │   ├── hooks/      # Dashboard hooks
+│   │   │   ├── utils/      # Dashboard utilities
+│   │   │   └── services/   # Dashboard services
+│   │   ├── projects/      # Projects feature
+│   │   ├── assets/         # Assets feature
+│   │   ├── profile/        # Profile feature
+│   │   ├── script2scene/   # Script2Scene feature
+│   │   ├── settings/       # Settings feature
+│   │   └── teaserEvaluator/ # Teaser Evaluator feature
+│   ├── components/         # Shared UI components
+│   │   └── GlassCard.tsx   # Glassmorphic card component
+│   ├── layouts/            # Layout components
+│   │   ├── AppShell.tsx    # Main app shell wrapper
+│   │   ├── Navigation.tsx  # Original navigation (legacy)
+│   │   ├── PageTransition.tsx # Page transition animations
+│   │   ├── Sidebar.tsx     # Collapsible sidebar navigation
+│   │   ├── TopNavigation.tsx # Top navigation bar
+│   │   └── index.ts        # Component exports
+│   └── lib/                # API clients, integrations
 ├── public/                 # Static assets
 ├── postcss.config.mjs      # PostCSS configuration
 ├── tsconfig.json           # TypeScript configuration
@@ -79,6 +93,16 @@ The application uses a consistent shell layout:
   - `npm run build` - Build for production
   - `npm run start` - Start production server
 
+## Architecture
+The project follows a feature-based architecture with clear separation of concerns:
+- **Routes** (`app/`): Minimal page components that only handle routing and composition
+- **Features** (`src/features/`): Self-contained feature modules with components, hooks, utils, and services
+- **Shared Components** (`src/components/`): Reusable UI components used across features
+- **Layouts** (`src/layouts/`): App shell and layout components
+- **Lib** (`src/lib/`): API clients and external integrations
+
+Each feature follows the Single Responsibility Principle and is independently testable.
+
 ## Recent Changes
 - **Nov 5, 2025:** Initial project setup with Next.js 16, Tailwind CSS 4, Framer Motion, and Lucide-react
 - **Nov 5, 2025:** Created base layout components (GlassCard, Navigation, PageTransition)
@@ -86,4 +110,5 @@ The application uses a consistent shell layout:
 - **Nov 5, 2025:** Built AppShell with TopNavigation, collapsible Sidebar, and main content area
 - **Nov 5, 2025:** Implemented all main pages: Dashboard, Projects, Teaser Evaluator, Script2Scene, Assets, Settings
 - **Nov 5, 2025:** Added active state glow effects and smooth sidebar expand/collapse animations
+- **Nov 7, 2025:** Refactored project structure to feature-based architecture following Single Responsibility Principle
 

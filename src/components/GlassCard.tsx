@@ -24,3 +24,5 @@ export default function GlassCard({ children, className = '', hover = true }: Gl
     </Component>
   );
 }
+
+

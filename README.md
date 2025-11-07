@@ -73,7 +73,7 @@ The application uses a consistent shell layout:
 - `.text-gradient` - Gradient text from accent-teal to accent-purple
 
 ## Development
-- **Dev Server:** Runs on port 5000 (bound to 0.0.0.0 for Replit)
+- **Dev Server:** Runs on port 5000 (bound to 0.0.0.0 for network access)
 - **Commands:**
   - `npm run dev` - Start development server
   - `npm run build` - Build for production
@@ -86,3 +86,4 @@ The application uses a consistent shell layout:
 - **Nov 5, 2025:** Built AppShell with TopNavigation, collapsible Sidebar, and main content area
 - **Nov 5, 2025:** Implemented all main pages: Dashboard, Projects, Teaser Evaluator, Script2Scene, Assets, Settings
 - **Nov 5, 2025:** Added active state glow effects and smooth sidebar expand/collapse animations
+

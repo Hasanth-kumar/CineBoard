@@ -44,7 +44,7 @@ CineBoard AI is a cinematic single-page application (SPA) built with Next.js 14+
 │   │   ├── profile/        # Profile feature
 │   │   ├── script2scene/   # Script2Scene feature
 │   │   ├── settings/       # Settings feature
-│   │   └── teaserEvaluator/ # Teaser Evaluator feature
+│   │   └── teaser-evaluator/ # Teaser Evaluator feature
 │   ├── components/         # Shared UI components
 │   │   └── GlassCard.tsx   # Glassmorphic card component
 │   ├── layouts/            # Layout components

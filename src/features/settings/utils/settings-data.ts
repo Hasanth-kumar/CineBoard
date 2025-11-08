@@ -1,5 +1,5 @@
 /**
- * File: settingsData.ts
+ * File: settings-data.ts
  * Responsibility: Provides mock data utilities for application settings and configuration options.
  */
 

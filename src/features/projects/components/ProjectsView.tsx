@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Plus } from 'lucide-react';
 import ProjectsList from './ProjectsList';
-import { getProjects } from '../utils/projectsData';
+import { getProjects } from '../utils/projects-data';
 
 export default function ProjectsView() {
   const projects = getProjects();

@@ -20,7 +20,7 @@ export default function TeaserEvaluatorView() {
           animate={{ opacity: 1, y: 0 }}
           className="lg:col-span-2"
         >
-          <GlassCard hover={false} className="h-full">
+          <GlassCard isHoverable={false} className="h-full">
             <div className="flex flex-col items-center justify-center min-h-[400px] space-y-6">
               <div className="w-20 h-20 rounded-full glass flex items-center justify-center">
                 <Upload className="w-10 h-10 text-accent-teal" />
@@ -48,7 +48,7 @@ export default function TeaserEvaluatorView() {
           transition={{ delay: 0.1 }}
           className="space-y-6"
         >
-          <GlassCard hover={false}>
+          <GlassCard isHoverable={false}>
             <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-accent-teal" />
               AI Analysis
@@ -69,7 +69,7 @@ export default function TeaserEvaluatorView() {
             </div>
           </GlassCard>
 
-          <GlassCard hover={false}>
+          <GlassCard isHoverable={false}>
             <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
               <BarChart3 className="w-5 h-5 text-accent-purple" />
               Metrics

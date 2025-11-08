@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Film } from 'lucide-react';
 import GlassCard from '@/src/components/GlassCard';
-import { Project } from '../utils/projectsData';
+import { Project } from '../utils/projects-data';
 
 interface ProjectsListProps {
   projects: Project[];

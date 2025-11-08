@@ -1,5 +1,5 @@
 /**
- * File: sidebarData.ts
+ * File: sidebar-data.ts
  * Responsibility: Provides navigation configuration data for the sidebar component.
  */
 

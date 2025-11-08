@@ -1,5 +1,5 @@
 /**
- * File: assetsData.ts
+ * File: assets-data.ts
  * Responsibility: Provides mock data utilities for asset types and recent assets in the media library.
  */
 

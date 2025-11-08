@@ -3,7 +3,7 @@
 import DashboardStats from './DashboardStats';
 import RecentProjects from './RecentProjects';
 import QuickActions from './QuickActions';
-import { getDashboardStats, getRecentProjects } from '../utils/dashboardData';
+import { getDashboardStats, getRecentProjects } from '../utils/dashboard-data';
 
 export default function DashboardView() {
   const stats = getDashboardStats();

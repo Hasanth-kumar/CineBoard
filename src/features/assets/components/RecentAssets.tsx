@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { FolderOpen } from 'lucide-react';
 import GlassCard from '@/src/components/GlassCard';
-import { RecentAsset } from '../utils/assetsData';
+import { RecentAsset } from '../utils/assets-data';
 
 interface RecentAssetsProps {
   assets: RecentAsset[];
@@ -16,7 +16,7 @@ export default function RecentAssets({ assets }: RecentAssetsProps) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.4 }}
     >
-      <GlassCard hover={false}>
+      <GlassCard isHoverable={false}>
         <h3 className="text-xl font-bold mb-6">Recent Assets</h3>
         <div className="space-y-4">
           {assets.map((asset, i) => (

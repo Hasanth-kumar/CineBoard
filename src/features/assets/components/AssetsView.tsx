@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Plus } from 'lucide-react';
 import AssetTypes from './AssetTypes';
 import RecentAssets from './RecentAssets';
-import { getAssetTypes, getRecentAssets } from '../utils/assetsData';
+import { getAssetTypes, getRecentAssets } from '../utils/assets-data';
 
 export default function AssetsView() {
   const assetTypes = getAssetTypes();

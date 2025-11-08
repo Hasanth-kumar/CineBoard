@@ -1,5 +1,5 @@
 /**
- * File: dashboardData.ts
+ * File: dashboard-data.ts
  * Responsibility: Provides mock data utilities for dashboard statistics and recent projects.
  */
 

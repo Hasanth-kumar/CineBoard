@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import GlassCard from '@/src/components/GlassCard';
-import { getSettings } from '../utils/settingsData';
+import { getSettings } from '../utils/settings-data';
 
 export default function SettingsView() {
   const settings = getSettings();

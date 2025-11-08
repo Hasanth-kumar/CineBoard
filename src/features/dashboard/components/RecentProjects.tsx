@@ -20,7 +20,7 @@ export default function RecentProjects({ projects }: RecentProjectsProps) {
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 0.4 }}
     >
-      <GlassCard hover={false}>
+      <GlassCard isHoverable={false}>
         <h3 className="text-xl font-bold mb-4">Recent Projects</h3>
         <div className="space-y-4">
           {projects.map((project, i) => (

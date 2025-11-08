@@ -19,7 +19,7 @@ export default function Script2SceneView() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          <GlassCard hover={false} className="h-full">
+          <GlassCard isHoverable={false} className="h-full">
             <div className="flex items-center gap-3 mb-4">
               <FileText className="w-6 h-6 text-accent-teal" />
               <h3 className="text-xl font-bold">Script Input</h3>
@@ -44,7 +44,7 @@ export default function Script2SceneView() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.1 }}
         >
-          <GlassCard hover={false} className="h-full">
+          <GlassCard isHoverable={false} className="h-full">
             <div className="flex items-center gap-3 mb-4">
               <Image className="w-6 h-6 text-accent-purple" />
               <h3 className="text-xl font-bold">Scene Visualization</h3>

@@ -1,5 +1,5 @@
 /**
- * File: projectsData.ts
+ * File: projects-data.ts
  * Responsibility: Provides mock data utilities for project listings and project-related data structures.
  */
 

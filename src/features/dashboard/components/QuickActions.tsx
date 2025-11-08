@@ -9,7 +9,7 @@ interface Action {
   icon: LucideIcon;
 }
 
-const actions: Action[] = [
+const ACTIONS: Action[] = [
   { label: 'Create New Project', icon: Film },
   { label: 'Evaluate Teaser', icon: Sparkles },
   { label: 'Generate Scene', icon: TrendingUp },
@@ -22,10 +22,10 @@ export default function QuickActions() {
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 0.5 }}
     >
-      <GlassCard hover={false}>
+      <GlassCard isHoverable={false}>
         <h3 className="text-xl font-bold mb-4">Quick Actions</h3>
         <div className="space-y-3">
-          {actions.map((action, i) => (
+          {ACTIONS.map((action, i) => (
             <motion.button
               key={i}
               whileHover={{ scale: 1.02, x: 5 }}

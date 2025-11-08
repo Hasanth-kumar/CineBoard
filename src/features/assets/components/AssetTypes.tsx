@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import GlassCard from '@/src/components/GlassCard';
-import { AssetType } from '../utils/assetsData';
+import { AssetType } from '../utils/assets-data';
 
 interface AssetTypesProps {
   assetTypes: AssetType[];

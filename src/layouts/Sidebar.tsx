@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { getSidebarItems } from './utils/sidebarData';
+import { getSidebarItems } from './utils/sidebar-data';
 
 export default function Sidebar() {
   const [isExpanded, setIsExpanded] = useState(true);

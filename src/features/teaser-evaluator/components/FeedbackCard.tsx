@@ -36,9 +36,13 @@ export default function FeedbackCard({ card, index }: FeedbackCardProps) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1 }}
+      transition={{ 
+        delay: index * 0.2,
+        duration: 0.5,
+        ease: [0.4, 0, 0.2, 1],
+      }}
       className="relative rounded-xl p-4 bg-black/40 backdrop-blur-md border border-teal-400/20 overflow-hidden"
       style={{
         boxShadow: '0 0 20px rgba(0, 255, 198, 0.1), inset 0 0 20px rgba(0, 255, 198, 0.05)'

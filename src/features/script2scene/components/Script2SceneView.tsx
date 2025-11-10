@@ -31,7 +31,7 @@ export default function Script2SceneView() {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="mt-4 w-full px-6 py-3 rounded-full bg-gradient-to-r from-accent-teal to-accent-purple font-semibold flex items-center justify-center gap-2"
+              className="mt-4 w-full px-6 py-3 rounded-full bg-gradient-to-r from-accent-teal to-accent-purple font-semibold flex items-center justify-center gap-2 hover-glow"
             >
               <Wand2 className="w-5 h-5" />
               Generate Scene

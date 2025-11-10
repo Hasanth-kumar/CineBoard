@@ -126,35 +126,29 @@ export default function SuggestionsSection({
                 exit={{ opacity: 0, scale: 0.8 }}
                 className="relative flex items-center gap-3 z-10"
               >
-                {/* Holographic shimmer effect */}
-                <motion.div
-                  className="absolute inset-0 rounded-full overflow-hidden"
-                  animate={{
-                    opacity: [0.3, 1, 0.3],
-                    scale: [1, 1.1, 1],
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                  }}
-                >
-                  <motion.div
-                    className="absolute inset-0"
-                    style={{
-                      background: 'linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%)',
-                      backgroundSize: '200% 200%',
-                    }}
-                    animate={{
-                      backgroundPosition: ['0% 0%', '100% 100%'],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: 'linear',
-                    }}
-                  />
-                </motion.div>
+                {/* Waveform Loading Animation */}
+                <div className="flex items-center gap-1 h-6">
+                  {[...Array(8)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      className="waveform-bar w-1 bg-white rounded-full"
+                      style={{
+                        height: '100%',
+                        minHeight: '8px',
+                      }}
+                      animate={{
+                        scaleY: [0.3, 1, 0.3],
+                        opacity: [0.5, 1, 0.5],
+                      }}
+                      transition={{
+                        duration: 1.2,
+                        repeat: Infinity,
+                        ease: 'easeInOut',
+                        delay: i * 0.1,
+                      }}
+                    />
+                  ))}
+                </div>
                 <span className="relative z-10">Applying AI Fixes...</span>
               </motion.div>
             ) : (

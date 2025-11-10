@@ -30,7 +30,7 @@ export default function QuickActions() {
               key={i}
               whileHover={{ scale: 1.02, x: 5 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full glass glass-hover rounded-lg p-4 flex items-center gap-3"
+              className="w-full glass glass-hover rounded-lg p-4 flex items-center gap-3 hover-glow"
             >
               <action.icon className="w-5 h-5 text-accent-teal" />
               <span className="text-sm font-medium">{action.label}</span>

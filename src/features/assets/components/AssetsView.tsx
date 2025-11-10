@@ -22,7 +22,7 @@ export default function AssetsView() {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="px-6 py-3 rounded-full bg-gradient-to-r from-accent-teal to-accent-purple font-semibold flex items-center gap-2"
+          className="px-6 py-3 rounded-full bg-gradient-to-r from-accent-teal to-accent-purple font-semibold flex items-center gap-2 hover-glow"
         >
           <Plus className="w-5 h-5" />
           Upload Assets

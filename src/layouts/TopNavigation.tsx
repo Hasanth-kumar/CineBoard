@@ -31,7 +31,7 @@ export default function TopNavigation() {
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="relative p-2 rounded-lg glass-hover"
+            className="relative p-2 rounded-lg glass-hover hover-glow"
           >
             <Bell className="w-5 h-5 text-white/60" />
             <span className="absolute top-1 right-1 w-2 h-2 bg-accent-teal rounded-full"></span>
@@ -40,7 +40,7 @@ export default function TopNavigation() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 glass glass-hover px-4 py-2 rounded-lg"
+            className="flex items-center gap-2 glass glass-hover px-4 py-2 rounded-lg hover-glow"
           >
             <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent-teal to-accent-purple flex items-center justify-center">
               <User className="w-4 h-4 text-white" />

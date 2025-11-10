@@ -40,7 +40,7 @@ export default function UploadSection({
         transition={{ duration: 0.5, ease: 'easeOut' }}
         className="flex justify-center"
       >
-        <div
+        <motion.div
           onDragOver={onDragOver}
           onDragLeave={onDragLeave}
           onDrop={onDrop}
@@ -51,7 +51,7 @@ export default function UploadSection({
             transition-all duration-300
             ${isDragging 
               ? 'border-accent-teal bg-accent-teal/10 scale-105 shadow-[0_0_40px_rgba(0,255,198,0.3)]' 
-              : 'border-white/20 hover:border-accent-teal/50 hover:bg-white/5'
+              : 'border-white/20 hover:border-accent-teal/50 hover:bg-white/5 animate-pulse-glow'
             }
           `}
           style={{
@@ -84,7 +84,7 @@ export default function UploadSection({
             onChange={onFileSelect}
             className="hidden"
           />
-        </div>
+        </motion.div>
       </motion.div>
     </div>
   );

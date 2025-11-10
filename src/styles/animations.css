@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+/**
+ * File: animations.css
+ * Responsibility: Defines all cinematic animation keyframes and utilities
+ */
+
+@layer utilities {
+  /* Lens Flare Effect for Page Transitions */
+  @keyframes lens-flare-fade-in {
+    0% {
+      opacity: 0;
+      filter: brightness(0.5) blur(20px);
+      transform: scale(1.1);
+    }
+    50% {
+      filter: brightness(1.2) blur(5px);
+    }
+    100% {
+      opacity: 1;
+      filter: brightness(1) blur(0);
+      transform: scale(1);
+    }
+  }
+
+  @keyframes lens-flare-fade-out {
+    0% {
+      opacity: 1;
+      filter: brightness(1) blur(0);
+      transform: scale(1);
+    }
+    50% {
+      filter: brightness(1.2) blur(5px);
+    }
+    100% {
+      opacity: 0;
+      filter: brightness(0.5) blur(20px);
+      transform: scale(0.9);
+    }
+  }
+
+  .animate-lens-flare-in {
+    animation: lens-flare-fade-in 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-lens-flare-out {
+    animation: lens-flare-fade-out 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* Ripple Effect for Button Clicks */
+  @keyframes ripple {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  .ripple-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ripple-effect::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .ripple-effect:active::after {
+    animation: ripple 0.6s ease-out;
+    width: 300px;
+    height: 300px;
+  }
+
+  /* Hover Glow Effect */
+  @keyframes glow-pulse {
+    0%, 100% {
+      box-shadow: 0 0 10px rgba(0, 255, 198, 0.3),
+                  0 0 20px rgba(160, 32, 240, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(0, 255, 198, 0.5),
+                  0 0 40px rgba(160, 32, 240, 0.4),
+                  0 0 60px rgba(0, 255, 198, 0.3);
+    }
+  }
+
+  .hover-glow {
+    transition: all 0.3s ease;
+  }
+
+  .hover-glow:hover {
+    animation: glow-pulse 2s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(0, 255, 198, 0.5),
+                0 0 40px rgba(160, 32, 240, 0.4);
+  }
+
+  /* Elastic Slide Animation */
+  @keyframes elastic-slide {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-5px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-elastic-slide {
+    animation: elastic-slide 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* Staggered Slide Up */
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out forwards;
+  }
+
+  /* Pulsing Glow Border */
+  @keyframes pulse-glow {
+    0%, 100% {
+      border-color: rgba(0, 255, 198, 0.3);
+      box-shadow: 0 0 20px rgba(0, 255, 198, 0.2),
+                  inset 0 0 20px rgba(0, 255, 198, 0.1);
+    }
+    50% {
+      border-color: rgba(0, 255, 198, 0.6);
+      box-shadow: 0 0 40px rgba(0, 255, 198, 0.4),
+                  inset 0 0 30px rgba(0, 255, 198, 0.2);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+    border-color: rgba(0, 255, 198, 0.3);
+  }
+
+  /* Waveform Loading Animation */
+  @keyframes waveform {
+    0%, 100% {
+      transform: scaleY(0.3);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+  }
+
+  .waveform-bar {
+    animation: waveform 1.2s ease-in-out infinite;
+  }
+
+  .waveform-bar:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .waveform-bar:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  .waveform-bar:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+
+  .waveform-bar:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+
+  .waveform-bar:nth-child(5) {
+    animation-delay: 0.4s;
+  }
+
+  .waveform-bar:nth-child(6) {
+    animation-delay: 0.5s;
+  }
+
+  .waveform-bar:nth-child(7) {
+    animation-delay: 0.6s;
+  }
+
+  .waveform-bar:nth-child(8) {
+    animation-delay: 0.7s;
+  }
+}
+

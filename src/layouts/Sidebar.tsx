@@ -16,7 +16,12 @@ export default function Sidebar() {
     <motion.aside
       initial={{ width: 240 }}
       animate={{ width: isExpanded ? 240 : 80 }}
-      transition={{ duration: 0.3, ease: 'easeInOut' }}
+      transition={{ 
+        type: 'spring',
+        stiffness: 300,
+        damping: 30,
+        mass: 0.8,
+      }}
       className="glass border-r border-white/10 flex flex-col relative mb-4"
     >
       <div className="flex-1 py-6 px-3 space-y-2">
@@ -31,7 +36,7 @@ export default function Sidebar() {
                 whileTap={{ scale: 0.98 }}
                 className={`
                   relative flex items-center gap-3 px-3 py-3 rounded-xl cursor-pointer
-                  transition-all duration-300
+                  transition-all duration-300 hover-glow
                   ${isActive 
                     ? 'bg-gradient-to-r from-accent-teal/20 to-accent-purple/20 shadow-lg' 
                     : 'hover:bg-white/5'
@@ -86,7 +91,7 @@ export default function Sidebar() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsExpanded(!isExpanded)}
-          className="w-full glass glass-hover rounded-lg p-3 flex items-center justify-center"
+          className="w-full glass glass-hover rounded-lg p-3 flex items-center justify-center hover-glow"
         >
           {isExpanded ? (
             <ChevronLeft className="w-5 h-5 text-white/60" />

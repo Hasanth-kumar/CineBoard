@@ -20,7 +20,7 @@ export default function TeaserEvaluatorView() {
     handleClick,
   } = useTeaserUpload();
 
-  const { isApplyingFix, handleAutoApplyFix } = useAutoApplyFix();
+  const { isApplyingFix, showToast, handleAutoApplyFix } = useAutoApplyFix();
 
   const feedbackCards = getMockFeedbackCards();
   const suggestions = getMockSuggestions();
@@ -45,6 +45,7 @@ export default function TeaserEvaluatorView() {
       <SuggestionsSection
         suggestions={suggestions}
         isApplyingFix={isApplyingFix}
+        showToast={showToast}
         onAutoApplyFix={handleAutoApplyFix}
       />
     </>

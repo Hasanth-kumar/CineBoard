@@ -15,6 +15,11 @@ interface EvaluationViewProps {
   feedbackCards: FeedbackCardType[];
 }
 
+// Helper function to detect blob URLs
+const isBlobUrl = (url: string | null): boolean => {
+  return url?.startsWith('blob:') ?? false;
+};
+
 export default function EvaluationView({ videoUrl, feedbackCards }: EvaluationViewProps) {
   return (
     <div className="space-y-8">
@@ -46,13 +51,24 @@ export default function EvaluationView({ videoUrl, feedbackCards }: EvaluationVi
             >
               {videoUrl && (
                 <div className="aspect-video">
-                  <ReactPlayer
-                    url={videoUrl}
-                    width="100%"
-                    height="100%"
-                    controls
-                    playing={false}
-                  />
+                  {isBlobUrl(videoUrl) ? (
+                    // Use native video for blob URLs (local files)
+                    <video
+                      src={videoUrl}
+                      controls
+                      className="w-full h-full"
+                      style={{ objectFit: 'contain' }}
+                    />
+                  ) : (
+                    // Use ReactPlayer for external URLs (YouTube, Vimeo, etc.)
+                    <ReactPlayer
+                      url={videoUrl}
+                      width="100%"
+                      height="100%"
+                      controls
+                      playing={false}
+                    />
+                  )}
                 </div>
               )}
             </div>

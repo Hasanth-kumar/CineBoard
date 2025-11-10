@@ -5,6 +5,7 @@ import { useAutoApplyFix } from '../hooks/useAutoApplyFix';
 import { getMockFeedbackCards, getMockSuggestions } from '../utils/teaser-data';
 import UploadSection from './UploadSection';
 import EvaluationView from './EvaluationView';
+import ComparisonView from './ComparisonView';
 import SuggestionsSection from './SuggestionsSection';
 
 export default function TeaserEvaluatorView() {
@@ -20,7 +21,14 @@ export default function TeaserEvaluatorView() {
     handleClick,
   } = useTeaserUpload();
 
-  const { isApplyingFix, showToast, handleAutoApplyFix } = useAutoApplyFix();
+  const { 
+    isApplyingFix, 
+    showToast, 
+    showComparison,
+    handleAutoApplyFix,
+    handleAcceptChanges,
+    handleRevert,
+  } = useAutoApplyFix();
 
   const feedbackCards = getMockFeedbackCards();
   const suggestions = getMockSuggestions();
@@ -41,7 +49,15 @@ export default function TeaserEvaluatorView() {
 
   return (
     <>
-      <EvaluationView videoUrl={videoUrl} feedbackCards={feedbackCards} />
+      {showComparison ? (
+        <ComparisonView 
+          videoUrl={videoUrl} 
+          onAcceptChanges={handleAcceptChanges}
+          onRevert={handleRevert}
+        />
+      ) : (
+        <EvaluationView videoUrl={videoUrl} feedbackCards={feedbackCards} />
+      )}
       <SuggestionsSection
         suggestions={suggestions}
         isApplyingFix={isApplyingFix}

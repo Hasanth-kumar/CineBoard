@@ -1,3 +1,9 @@
+/**
+ * File: PageTransition.tsx
+ * Responsibility: Page transition wrapper with cinematic lens flare effects
+ * Features: Smooth page transitions with blur and brightness effects
+ */
+
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';

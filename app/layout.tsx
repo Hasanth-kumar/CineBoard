@@ -1,3 +1,9 @@
+/**
+ * File: layout.tsx
+ * Responsibility: Next.js root layout component
+ * Features: Configures fonts, global styles, and wraps app with AppShell
+ */
+
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Inter } from "next/font/google";

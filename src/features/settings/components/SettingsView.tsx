@@ -1,3 +1,9 @@
+/**
+ * File: SettingsView.tsx
+ * Responsibility: Main settings page view component
+ * Features: Settings categories with animated cards
+ */
+
 'use client';
 
 import { motion } from 'framer-motion';

@@ -1,3 +1,9 @@
+/**
+ * File: ProjectsView.tsx
+ * Responsibility: Main projects page view component
+ * Features: Project listing with create new project action
+ */
+
 'use client';
 
 import { motion } from 'framer-motion';

@@ -1,3 +1,9 @@
+/**
+ * File: TeaserEvaluatorView.tsx
+ * Responsibility: Main container component for the teaser evaluator feature
+ * Orchestrates: File upload, evaluation display, comparison view, and suggestions
+ */
+
 'use client';
 
 import { useTeaserUpload } from '../hooks/useTeaserUpload';
@@ -35,35 +41,43 @@ export default function TeaserEvaluatorView() {
 
   if (!file) {
     return (
-      <UploadSection
-        isDragging={isDragging}
-        fileInputRef={fileInputRef}
-        onDragOver={handleDragOver}
-        onDragLeave={handleDragLeave}
-        onDrop={handleDrop}
-        onClick={handleClick}
-        onFileSelect={handleFileSelect}
-      />
+      <div className="relative min-h-[calc(100vh-4rem)] flex flex-col -m-6 p-6">
+        {/* Background animation is now global in AppShell */}
+        <div className="relative z-0 flex-1">
+          <UploadSection
+            isDragging={isDragging}
+            fileInputRef={fileInputRef}
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            onDrop={handleDrop}
+            onClick={handleClick}
+            onFileSelect={handleFileSelect}
+          />
+        </div>
+      </div>
     );
   }
 
   return (
-    <>
-      {showComparison ? (
-        <ComparisonView 
-          videoUrl={videoUrl} 
-          onAcceptChanges={handleAcceptChanges}
-          onRevert={handleRevert}
+    <div className="relative min-h-[calc(100vh-4rem)] flex flex-col -m-6 p-6">
+      {/* Background animation is now global in AppShell */}
+      <div className="relative z-0 flex-1 space-y-6 md:space-y-8">
+        {showComparison ? (
+          <ComparisonView 
+            videoUrl={videoUrl} 
+            onAcceptChanges={handleAcceptChanges}
+            onRevert={handleRevert}
+          />
+        ) : (
+          <EvaluationView videoUrl={videoUrl} feedbackCards={feedbackCards} />
+        )}
+        <SuggestionsSection
+          suggestions={suggestions}
+          isApplyingFix={isApplyingFix}
+          showToast={showToast}
+          onAutoApplyFix={handleAutoApplyFix}
         />
-      ) : (
-        <EvaluationView videoUrl={videoUrl} feedbackCards={feedbackCards} />
-      )}
-      <SuggestionsSection
-        suggestions={suggestions}
-        isApplyingFix={isApplyingFix}
-        showToast={showToast}
-        onAutoApplyFix={handleAutoApplyFix}
-      />
-    </>
+      </div>
+    </div>
   );
 }

@@ -1,3 +1,9 @@
+/**
+ * File: Sidebar.tsx
+ * Responsibility: Collapsible sidebar navigation component
+ * Features: Expandable/collapsible sidebar with active route highlighting and smooth animations
+ */
+
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';

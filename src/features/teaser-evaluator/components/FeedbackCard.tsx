@@ -1,3 +1,9 @@
+/**
+ * File: FeedbackCard.tsx
+ * Responsibility: Displays individual AI feedback card with animated icons and content
+ * Features: Icon mapping, rating bars, list/text content rendering
+ */
+
 'use client';
 
 import { motion } from 'framer-motion';
@@ -43,10 +49,7 @@ export default function FeedbackCard({ card, index }: FeedbackCardProps) {
         duration: 0.5,
         ease: [0.4, 0, 0.2, 1],
       }}
-      className="relative rounded-xl p-4 bg-black/40 backdrop-blur-md border border-teal-400/20 overflow-hidden"
-      style={{
-        boxShadow: '0 0 20px rgba(0, 255, 198, 0.1), inset 0 0 20px rgba(0, 255, 198, 0.05)'
-      }}
+      className="relative rounded-xl p-3 md:p-4 bg-black/40 backdrop-blur-md border border-teal-400/20 overflow-hidden feedback-card"
     >
       {/* Gradient border accent */}
       <div 

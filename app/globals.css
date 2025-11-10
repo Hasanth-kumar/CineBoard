@@ -9,8 +9,8 @@
 @layer base {
   body {
     @apply text-white antialiased;
-    background: linear-gradient(to bottom, #0b0b0f, #13131a);
     min-height: 100vh;
+    /* Background animation is handled by AppShell */
   }
 }
 
@@ -56,5 +56,36 @@
   
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(to bottom, var(--color-accent-purple), var(--color-accent-teal));
+  }
+
+  /* Responsive video container with subtle glows on mobile */
+  .video-container {
+    box-shadow: 0 0 20px rgba(0, 255, 198, 0.2), inset 0 0 10px rgba(0, 255, 198, 0.05);
+    border: 2px solid rgba(0, 255, 198, 0.2);
+  }
+
+  @media (min-width: 768px) {
+    .video-container {
+      box-shadow: 0 0 40px rgba(0, 255, 198, 0.3), inset 0 0 20px rgba(0, 255, 198, 0.1);
+      border: 2px solid rgba(0, 255, 198, 0.3);
+    }
+  }
+
+  /* Responsive drag state glow for upload section */
+  @media (min-width: 768px) {
+    .upload-dragging {
+      box-shadow: 0 0 60px rgba(0, 255, 198, 0.4), inset 0 0 40px rgba(0, 255, 198, 0.1) !important;
+    }
+  }
+
+  /* Responsive feedback card with subtle glows on mobile */
+  .feedback-card {
+    box-shadow: 0 0 10px rgba(0, 255, 198, 0.05), inset 0 0 10px rgba(0, 255, 198, 0.02);
+  }
+
+  @media (min-width: 768px) {
+    .feedback-card {
+      box-shadow: 0 0 20px rgba(0, 255, 198, 0.1), inset 0 0 20px rgba(0, 255, 198, 0.05);
+    }
   }
 }

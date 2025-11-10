@@ -1,3 +1,9 @@
+/**
+ * File: ProfileView.tsx
+ * Responsibility: User profile page displaying profile information and bio
+ * Features: Profile card, user information, and bio sections
+ */
+
 'use client';
 
 import { motion } from 'framer-motion';

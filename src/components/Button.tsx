@@ -1,3 +1,9 @@
+/**
+ * File: Button.tsx
+ * Responsibility: Reusable animated button component with ripple effects
+ * Features: Multiple variants (primary, secondary, ghost) with hover animations
+ */
+
 'use client';
 
 import { motion, HTMLMotionProps } from 'framer-motion';

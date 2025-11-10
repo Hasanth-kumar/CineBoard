@@ -205,5 +205,49 @@
   .waveform-bar:nth-child(8) {
     animation-delay: 0.7s;
   }
+
+  /* Animated Gradient Background Wave */
+  @keyframes gradient-wave {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .bg-gradient-wave {
+    background: linear-gradient(
+      -45deg,
+      #0b0b0f,
+      #13131a,
+      #0a1a1f,
+      #1a0a1f,
+      #0b0b0f
+    );
+    background-size: 400% 400%;
+    animation: gradient-wave 15s ease infinite;
+  }
+
+  .bg-gradient-wave::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+      ellipse at 20% 50%,
+      rgba(0, 255, 198, 0.15) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 80% 50%,
+      rgba(160, 32, 240, 0.15) 0%,
+      transparent 60%
+    );
+    animation: gradient-wave 20s ease infinite reverse;
+    pointer-events: none;
+  }
 }
 

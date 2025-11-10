@@ -1,3 +1,9 @@
+/**
+ * File: RecentProjects.tsx
+ * Responsibility: Displays list of recent projects with progress indicators
+ * Features: Animated progress bars and project status display
+ */
+
 'use client';
 
 import { motion } from 'framer-motion';

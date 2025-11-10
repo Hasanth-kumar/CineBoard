@@ -1,3 +1,9 @@
+/**
+ * File: GlassCard.tsx
+ * Responsibility: Reusable glassmorphic card component with optional hover animations
+ * Features: Conditional hover effects, customizable styling
+ */
+
 'use client';
 
 import { motion } from 'framer-motion';

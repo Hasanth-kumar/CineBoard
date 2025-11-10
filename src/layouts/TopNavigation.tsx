@@ -1,3 +1,9 @@
+/**
+ * File: TopNavigation.tsx
+ * Responsibility: Top navigation bar with branding, notifications, and user profile
+ * Features: Glassmorphic header with animated entrance
+ */
+
 'use client';
 
 import { motion } from 'framer-motion';

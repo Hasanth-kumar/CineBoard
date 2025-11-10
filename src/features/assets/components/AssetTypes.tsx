@@ -1,3 +1,9 @@
+/**
+ * File: AssetTypes.tsx
+ * Responsibility: Displays grid of asset type cards with counts
+ * Features: Responsive grid with animated cards
+ */
+
 'use client';
 
 import { motion } from 'framer-motion';

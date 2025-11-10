@@ -1,3 +1,9 @@
+/**
+ * File: ProjectsList.tsx
+ * Responsibility: Displays grid of project cards with progress indicators
+ * Features: Responsive grid layout with animated progress bars
+ */
+
 'use client';
 
 import { motion } from 'framer-motion';

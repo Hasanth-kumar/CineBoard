@@ -1,3 +1,9 @@
+/**
+ * File: ComparisonView.tsx
+ * Responsibility: Displays side-by-side comparison of original and fixed video
+ * Features: Draggable divider, before/after labels, accept/revert actions
+ */
+
 'use client';
 
 import { useState, useRef, useCallback, useEffect } from 'react';
@@ -71,10 +77,10 @@ export default function ComparisonView({ videoUrl, onAcceptChanges, onRevert }: 
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
       >
-        <h1 className="text-4xl font-bold mb-2">
+        <h1 className="text-3xl md:text-4xl font-bold mb-2">
           <span className="text-gradient">Comparison View</span>
         </h1>
-        <p className="text-white/60">Compare before and after fixes</p>
+        <p className="text-white/60 text-sm md:text-base">Compare before and after fixes</p>
       </motion.div>
 
       {/* Split-screen comparison */}
@@ -87,11 +93,7 @@ export default function ComparisonView({ videoUrl, onAcceptChanges, onRevert }: 
       >
         <GlassCard isHoverable={false} className="relative overflow-hidden p-0">
           <div 
-            className="relative w-full rounded-xl overflow-hidden"
-            style={{
-              boxShadow: '0 0 40px rgba(0, 255, 198, 0.3), inset 0 0 20px rgba(0, 255, 198, 0.1)',
-              border: '2px solid rgba(0, 255, 198, 0.3)'
-            }}
+            className="relative w-full rounded-xl overflow-hidden video-container"
           >
             {videoUrl && (
               <div className="relative flex" style={{ aspectRatio: '16/9' }}>
@@ -220,7 +222,7 @@ export default function ComparisonView({ videoUrl, onAcceptChanges, onRevert }: 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className="flex gap-4 justify-center"
+        className="flex flex-col sm:flex-row gap-4 justify-center"
       >
         {/* Accept Changes Button */}
         <motion.button

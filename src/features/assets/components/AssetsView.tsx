@@ -1,3 +1,9 @@
+/**
+ * File: AssetsView.tsx
+ * Responsibility: Main assets page view component for media library management
+ * Features: Asset type overview and recent assets display
+ */
+
 'use client';
 
 import { motion } from 'framer-motion';

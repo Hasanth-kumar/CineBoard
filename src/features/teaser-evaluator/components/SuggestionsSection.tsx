@@ -1,3 +1,9 @@
+/**
+ * File: SuggestionsSection.tsx
+ * Responsibility: Displays AI suggestions and auto-apply fix functionality
+ * Features: Animated suggestion chips, loading states, toast notifications
+ */
+
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
@@ -24,7 +30,7 @@ export default function SuggestionsSection({
       transition={{ delay: 0.2 }}
       className="space-y-6"
     >
-      <h2 className="text-2xl font-bold flex items-center gap-2">
+      <h2 className="text-xl md:text-2xl font-bold flex items-center gap-2">
         <span className="text-gradient">AI Suggestions</span>
         <span>🎯</span>
       </h2>
@@ -37,7 +43,7 @@ export default function SuggestionsSection({
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ scale: 1.05 }}
-            className="relative px-4 py-2 rounded-full glass border border-white/10 hover:border-accent-teal/50 transition-all overflow-hidden"
+            className="relative px-3 py-1.5 md:px-4 md:py-2 rounded-full glass border border-white/10 hover:border-accent-teal/50 transition-all overflow-hidden"
           >
             {/* Animated glow effect */}
             <motion.div
@@ -76,7 +82,7 @@ export default function SuggestionsSection({
                 delay: index * 0.2,
               }}
             />
-            <span className="relative text-sm text-white/90 z-10">{suggestion.text}</span>
+            <span className="relative text-xs md:text-sm text-white/90 z-10">{suggestion.text}</span>
           </motion.div>
         ))}
       </div>
@@ -88,7 +94,7 @@ export default function SuggestionsSection({
           disabled={isApplyingFix}
           whileHover={isApplyingFix ? {} : { scale: 1.05 }}
           whileTap={isApplyingFix ? {} : { scale: 0.95 }}
-          className="relative px-8 py-4 rounded-full font-semibold text-lg bg-gradient-to-r from-accent-teal to-accent-purple disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden"
+          className="relative px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold text-base md:text-lg bg-gradient-to-r from-accent-teal to-accent-purple disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden"
         >
           {/* Glow pulse animation on hover */}
           <motion.div

@@ -1,3 +1,9 @@
+/**
+ * File: EvaluationView.tsx
+ * Responsibility: Displays video player and AI feedback cards in a responsive layout
+ * Features: Responsive grid layout that collapses feedback panel below video on mobile
+ */
+
 'use client';
 
 import { motion } from 'framer-motion';
@@ -22,32 +28,28 @@ const isBlobUrl = (url: string | null): boolean => {
 
 export default function EvaluationView({ videoUrl, feedbackCards }: EvaluationViewProps) {
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 md:space-y-8">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-4xl font-bold mb-2">
+        <h1 className="text-3xl md:text-4xl font-bold mb-2">
           <span className="text-gradient">Teaser Evaluator</span>
         </h1>
-        <p className="text-white/60">AI-powered analysis of your video teasers</p>
+        <p className="text-white/60 text-sm md:text-base">AI-powered analysis of your video teasers</p>
       </motion.div>
 
-      {/* Split Layout: 70% video, 30% feedback */}
-      <div className="grid grid-cols-1 lg:grid-cols-10 gap-6">
-        {/* Video Player - 70% */}
+      {/* Responsive Layout: Stack on mobile, side-by-side on desktop */}
+      <div className="flex flex-col lg:grid lg:grid-cols-10 gap-4 md:gap-6">
+        {/* Video Player - Full width on mobile, 70% on desktop */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="lg:col-span-7"
+          className="w-full lg:col-span-7 order-1 lg:order-1"
         >
           <GlassCard isHoverable={false} className="relative overflow-hidden">
             <div 
-              className="relative w-full rounded-xl overflow-hidden"
-              style={{
-                boxShadow: '0 0 40px rgba(0, 255, 198, 0.3), inset 0 0 20px rgba(0, 255, 198, 0.1)',
-                border: '2px solid rgba(0, 255, 198, 0.3)'
-              }}
+              className="relative w-full rounded-xl overflow-hidden video-container"
             >
               {videoUrl && (
                 <div className="aspect-video">
@@ -75,13 +77,13 @@ export default function EvaluationView({ videoUrl, feedbackCards }: EvaluationVi
           </GlassCard>
         </motion.div>
 
-        {/* Feedback Panel - 30% */}
+        {/* Feedback Panel - Full width on mobile (below video), 30% on desktop */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="lg:col-span-3"
+          className="w-full lg:col-span-3 order-2 lg:order-2"
         >
-          <GlassCard isHoverable={false} className="h-full max-h-[600px] overflow-hidden flex flex-col">
+          <GlassCard isHoverable={false} className="h-full lg:max-h-[600px] overflow-hidden flex flex-col">
             <div className="flex items-center gap-2 mb-4 pb-4 border-b border-white/10">
               <Sparkles className="w-5 h-5 text-accent-teal" />
               <h3 className="text-lg font-bold">AI Feedback</h3>

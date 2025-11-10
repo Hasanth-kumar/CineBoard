@@ -1,3 +1,9 @@
+/**
+ * File: DashboardStats.tsx
+ * Responsibility: Displays dashboard statistics cards with icons and metrics
+ * Features: Animated stat cards with trend indicators
+ */
+
 'use client';
 
 import { motion } from 'framer-motion';

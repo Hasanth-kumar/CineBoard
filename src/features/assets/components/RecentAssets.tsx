@@ -1,3 +1,9 @@
+/**
+ * File: RecentAssets.tsx
+ * Responsibility: Displays list of recently uploaded assets
+ * Features: Animated asset list with hover effects
+ */
+
 'use client';
 
 import { motion } from 'framer-motion';

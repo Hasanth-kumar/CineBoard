@@ -1,3 +1,9 @@
+/**
+ * File: Script2SceneView.tsx
+ * Responsibility: Script to scene generator interface
+ * Features: Script input area and scene visualization output
+ */
+
 'use client';
 
 import { motion } from 'framer-motion';

@@ -1,3 +1,9 @@
+/**
+ * File: template.tsx
+ * Responsibility: Next.js template wrapper for page transitions
+ * Features: Wraps all pages with PageTransition component for smooth animations
+ */
+
 'use client';
 
 import PageTransition from '@/src/layouts/PageTransition';

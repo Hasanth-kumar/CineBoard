@@ -1,3 +1,9 @@
+/**
+ * File: QuickActions.tsx
+ * Responsibility: Displays quick action buttons for common dashboard tasks
+ * Features: Animated action buttons with hover effects
+ */
+
 'use client';
 
 import { motion } from 'framer-motion';

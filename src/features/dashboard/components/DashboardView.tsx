@@ -1,35 +1,22 @@
+/**
+ * File: DashboardView.tsx
+ * Responsibility: Main dashboard view component displaying stats, cards, and recent projects
+ * Features: Cinematic cards, statistics, and quick actions
+ */
+
 'use client';
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Film, Brain } from 'lucide-react';
 import DashboardStats from './DashboardStats';
 import RecentProjects from './RecentProjects';
 import QuickActions from './QuickActions';
-import { getDashboardStats, getRecentProjects } from '../utils/dashboard-data';
+import { getDashboardStats, getRecentProjects, getDashboardCards } from '../utils/dashboard-data';
 
 export default function DashboardView() {
   const stats = getDashboardStats();
   const recentProjects = getRecentProjects();
-
-  const cards = [
-    {
-      icon: Film,
-      title: 'Teaser Evaluator',
-      subtitle: 'Analyze your teaser like a pro',
-      href: '/teaser-evaluator',
-      gradient: 'from-accent-teal to-accent-purple',
-      gradientColors: 'linear-gradient(to bottom right, #00FFC6, #A020F0)',
-    },
-    {
-      icon: Brain,
-      title: 'Script2Scene',
-      subtitle: 'Turn scripts into cinematic scenes',
-      href: '/script2scene',
-      gradient: 'from-accent-purple to-accent-teal',
-      gradientColors: 'linear-gradient(to bottom right, #A020F0, #00FFC6)',
-    },
-  ];
+  const cards = getDashboardCards();
 
   return (
     <div className="space-y-8">

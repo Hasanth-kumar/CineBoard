@@ -71,3 +71,8 @@ export const getMockSuggestions = (): Suggestion[] => [
   { id: '6', text: 'Optimize for mobile viewing', category: 'Format' },
 ];
 
+
+
+
+
+

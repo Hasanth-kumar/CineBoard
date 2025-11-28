@@ -27,3 +27,8 @@ export function validateTeaserFile(file: File): FileValidationResult {
   return { isValid: true };
 }
 
+
+
+
+
+

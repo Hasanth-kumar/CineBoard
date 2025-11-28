@@ -58,6 +58,19 @@
     background: linear-gradient(to bottom, var(--color-accent-purple), var(--color-accent-teal));
   }
 
+  /* Screen reader only - visually hidden but accessible to assistive technologies */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
   /* Responsive video container with subtle glows on mobile */
   .video-container {
     box-shadow: 0 0 20px rgba(0, 255, 198, 0.2), inset 0 0 10px rgba(0, 255, 198, 0.05);
